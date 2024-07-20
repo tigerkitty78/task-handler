@@ -1,0 +1,24 @@
+.form {
+  
+    margin-left: 50px;
+    padding: 40px;
+}
+form {
+    margin-left: 70px;
+    margin-right: 70px;
+    margin-top: 30px;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+  }
+  .form-control {
+    margin: 10px 0;
+    width: 600px;
+  }
+  
+  .btn-primary {
+    margin-top: 10px;
+  }
