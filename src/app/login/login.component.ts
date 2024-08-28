@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -18,19 +19,21 @@ export class LoginComponent {
 
   constructor(private http: HttpClient, private router: Router) {
     console.log('LoginComponent constructor called');
+    console.log(`Email: ${this.email}, Password: ${this.password}`);
   }
 
   onSubmit() {
-    const loginData = { email: this.email, password: this.password };
-    console.log('Login submitted:', loginData);
-
-    this.http.get('https://jsonplaceholder.typicode.com/todos/1')
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    this.http.post('http://127.0.0.1:8000/login', { email: this.email, password: this.password },{ headers: headers })
       .subscribe(
-        response => {
-          console.log('HTTP GET successful:', response);
+        (response: any) => {
+          localStorage.setItem('access_token', response.access);
+          localStorage.setItem('refresh_token', response.refresh);
+          this.router.navigate(['/cal']);
         },
         error => {
-          console.error('HTTP GET failed:', error);
+          console.error('Login failed:', error);
+          alert('Invalid credentials');
         }
       );
   }

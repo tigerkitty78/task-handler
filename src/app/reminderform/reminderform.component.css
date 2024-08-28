@@ -1,0 +1,71 @@
+
+.form{
+    height: 390px;
+}
+
+
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 500px;
+  /* Full viewport height */
+   
+  }
+
+ 
+  .form-group{
+    width: 450px;
+  margin-top: 20px;
+  margin-left: 10px;
+
+  }
+
+
+  
+
+  .btni{
+    margin-left: 100px;
+    margin-top: 20px;
+    background-color: rgb(152, 56, 163);
+  padding: 10px;
+  }
+
+  .loginform{
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+   
+    background-color: aqua !important;
+    
+  }
+
+  .btn{
+  margin-left: 100px;
+    background-color: rgb(152, 56, 163);
+    margin-top: 0px;
+    padding: 10px;
+  }
+
+  .shadow{
+ 
+   
+  
+    border-radius: 30px;
+    background-color: rgb(255, 255, 255);
+  }
+  body {
+    background-color: #e7d3f7; /* Replace with your desired color */
+    margin: 0 !important; /* Remove default margin */
+  
+
+}
+.custom-dialog-container {
+    background-color: #f0f0f0; /* Example of custom background */
+    padding: 20px; /* Add padding */
+    border-radius: 8px; 
+    height: 590px;/* Round the corners */
+    width: 600px;
+  }
+  
+  

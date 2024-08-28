@@ -1,0 +1,45 @@
+#sidebar {
+    height: 100vh; /* Full-height sidebar */
+    position: fixed; /* Fixed sidebar */
+    top: 0;
+    left: 0;
+    z-index: 100; /* Ensure it stays on top */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 50px;
+    background-color: rgb(255, 219, 248);
+  }
+  
+  /* Custom styles for the sidebar items */
+  #sidebar .nav-link {
+    font-size: 1.1rem;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+  
+  #sidebar .nav-link.active {
+    color: #000000;
+    font-weight: bold;
+  }
+  
+  #sidebar .sidebar-heading {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .col-md-9{
+    margin-left: 250px;
+  }
+
+  .col-md-3{
+  background-color: aquamarine;
+  }
+  .nav-item{
+    color: black;
+}
+.nav-link{
+    color: black;
+}
+.nav-link.active{
+color: black;
+}

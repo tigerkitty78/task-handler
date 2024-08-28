@@ -1,0 +1,93 @@
+<app-home></app-home>
+
+<div class="calendar-container">
+  <div class="calendar">
+    <div class="calendar-headline">
+      <div class="calendar-headline-month">
+        {{ firstDayOfActiveMonth().monthShort }},
+        {{ firstDayOfActiveMonth().year }}
+      </div>
+      <div class="calendar-headline-controls">
+        <div class="calendar-headline-control" (click)="goToPreviousMonth()">
+          «
+        </div>
+        <div class="calendar-headline-control calendar-headline-control-today" (click)="goToToday()">
+          Today
+        </div>
+        <div class="calendar-headline-control" (click)="goToNextMonth()">»</div>
+      </div>
+    </div>
+    <div class="calendar-weeks-grid">
+      @for (weekDay of weekDays(); track $index) {
+      <div class="calendar-weeks-grid-cell">{{ weekDay }}</div>
+      }
+    </div>
+    <div class="calendar-grid">
+      
+        <div
+      
+    *ngFor="let dayOfMonth of daysOfMonth(); trackBy: trackByIndex"
+    [ngClass]="{
+      'calendar-grid-cell': true,
+      'calendar-grid-cell-active':
+        activeDay()?.toISODate() === dayOfMonth.toISODate(),
+      'calendar-grid-cell-inactive':
+        dayOfMonth.month !== firstDayOfActiveMonth().month,
+      'calendar-grid-cell-today': isToday(dayOfMonth),
+      'calendar-grid-cell-past': dayOfMonth < today().startOf('day')
+    }"
+    (click)="onDateClick(dayOfMonth)"
+  >
+    {{ dayOfMonth.day }}
+      </div>
+      
+    </div>
+  </div>
+  <div class="schedule">
+    <div class="schedule-headline">
+      <div class="top">
+        <div><p class="uu" *ngIf="selectedDate">{{ selectedDate.toISODate() }}</p></div>
+        @if (activeDay(); as activeDay) {
+        <div><p class="uu" *ngIf="selectedDate">Clicked Date: {{ selectedDate.toISODate() }}</p></div>
+        <div><p class="uu" *ngIf="selectedDate">Clicked Date: {{ selectedDate.toISODate() }}</p></div>
+        }
+      </div>
+    </div>
+    <div>
+      @if (activeDay() && activeDayMeetings().length === 0) {
+      <div>No Planned Meetings today</div>
+      }
+
+      @if (activeDay() && activeDayMeetings().length > 0) {
+      @for (meeting of activeDayMeetings(); track $index) {
+      <div>{{ meeting }}</div>
+      }
+      }
+      <div class="lne">
+        <p class="uu" >tfjyuhg</p>
+      </div>
+      <div class="line">
+        <p class="uu">wrfawe</p>
+      </div>
+      <div class="line">
+        <p class="uu">wrfawe</p>
+      </div>
+      <div class="line">
+        <p class="uu">wrfawe</p>
+      </div>
+      <div class="line">
+        <p class="uu">aefwe</p>
+      </div>
+      <div class="line">
+        <p class="uu">wrdtgetrg</p>
+      </div>
+      <div class="line">
+        <p class="uu">wrfawe</p>
+      </div>
+      <div class="line">
+        <p class="uu">wrfawe</p>
+      </div>
+
+    </div>
+  </div>
+</div>

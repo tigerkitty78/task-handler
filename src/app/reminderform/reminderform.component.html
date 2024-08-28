@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+
+
+<div class="shadow p-3 mb-7 bg-blue ">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form">
+
+    
+    <form>
+
+        <div class="form-group">
+        
+         
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" [(ngModel)]="description" name="description">
+        </div>
+        <div class="form-group">
+            
+            <label for="options">Choose an option:</label>
+            <input list="options"  class="form-control" id="input-box" name="options"  [(ngModel)]="category" name="category" >
+            <datalist id="options">
+              <option value="Option 1">
+              <option value="Option 2">
+              <option value="Option 3">
+              <option value="Option 4">
+            </datalist>
+          </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button (click)="onSubmit()"   type="submit" class="btni btn-primary">Submit</button>
+   
+      <button class="btn" (click)="onCancel()">Cancel</button>
+    
+  </form>
+</form>
+</div>
+
