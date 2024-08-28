@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sentiment Analysis</title>
+</head>
+<body>
+    <h1>Enter text for sentiment analysis</h1>
+    <form method="post">
+        {% csrf_token %}
+        <textarea name="text"></textarea>
+        <button type="submit">Analyze</button>
+    </form>
+</body>
+</html>
